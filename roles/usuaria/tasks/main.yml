@@ -1,0 +1,12 @@
+---
+# tasks file for usuaria
+- name: Get OS family
+  ansible.builtin.debug:
+    msg:
+      - ansible_distribution {{ ansible_distribution }}
+      - ansible_os_family {{ ansible_os_family }}
+ 
+- name: Include tasks to create user in linux machines.
+  ansible.builtin.include: linux.yml
+  when: ansible_distribution == 'Debian'
+
