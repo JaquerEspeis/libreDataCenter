@@ -1,0 +1,43 @@
+---
+- name: Install required packages..
+  package:
+    name:
+    - sudo
+
+- name: Se asegura que el grupo sudo existe.
+  group:
+    name: sudo
+
+- name: Crea los usuarios requeridos.
+  user:
+    name: '{{ usuaria }}'
+    shell: /bin/bash
+    home: '/home/{{ usuaria }}'
+    groups: sudo
+    password: '*' # Para que el usuario no se cree bloqueado.
+  when:
+    - usuaria is defined
+    - usuaria | length > 0
+
+- name: Make users passwordless for sudo in group.
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%sudo'
+    line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+  when: ansible_os_family == "Debian"
+
+- name: Limpiar llaves viejas.
+  ansible.posix.authorized_key:
+    user: "{{ usuaria }}"
+    key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5simplefakekey clear@clear
+    state: present
+    exclusive: True
+
+- name: Autorizar solo las llaves ssh para cabecar.
+  authorized_key:
+    user: "{{ usuaria }}"
+    key: '{{ item }}'
+    state: present
+  loop: "{{ authorized_ssh_keys }}"
