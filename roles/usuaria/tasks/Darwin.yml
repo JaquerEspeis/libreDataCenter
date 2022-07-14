@@ -1,0 +1,7 @@
+---
+- name: Create usuaria en Darwin
+  cisco.nxos.nxos_user:
+    name: "{{ usuaria }}"
+    role: network-admin
+    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    state: present

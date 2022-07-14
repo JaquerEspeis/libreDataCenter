@@ -1,3 +1,5 @@
 ---
 # defaults file for usuaria
-usuaria_name: test_user
+usuaria: test_user
+authorized_ssh_keys:
+  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFLIO0sVw4WGys8pegLW7sisAGej2do5fboys0p3AJWM hola@test.net

@@ -7,6 +7,6 @@
   tags:
     - never
     - debug
- 
+
 - name: Include OS tasks
   ansible.builtin.include_tasks: "{{ ansible_system }}.yml"
