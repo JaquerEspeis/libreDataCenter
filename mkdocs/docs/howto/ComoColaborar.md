@@ -1,12 +1,12 @@
-# How to contribute to this documentation
+# Cómo contribuir a esta documentación
 
-> The main documentation of the SCOOP project.
+> La documentación principal del Libre DataCenter.
 
-Deployed at https://carbon-offset-open-platform.github.io/mainPublicDoc.
+Desplegado en https://jaquerespeis.github.io/libreDataCenter/
 
-## Contribute
+## Contribuir
 
-### Setting up
+### Configurar ambiente
 ```
 git clone git@github.com:Carbon-Offset-Open-Platform/mainPublicDoc.git
 python3 -m venv venv
@@ -14,21 +14,21 @@ source venv/bin/activate
 (venv) ~ pip install mkdocs-material
 ```
 
-### Add content
-1. Create a `.md` file in the respective folder and write your content in Markdown formatting. [Learn more here.](https://www.markdownguide.org/).
-1. Edit `mkdocs.yml` and add your file to the `nav` section.
-1. Commit and sync your GIT repo.
+### Añadir contenido
+1. Crea un archivo `.md` en la carpeta respectiva y escribe tu contenido utilizando formato Markdown. [Aprende más aquí.](https://www.markdownguide.org/).
+1. Edita `mkdocs.yml` y agrega tu archivo a la sección `nav`.
+1. Realiza un commit y sincroniza tu repositorio GIT.
 
-### Test and Build
+### Probar y construir
 
-After getting into the Python environment either run serve to see the results locally in your web browser:
+Después de ingresar al entorno de Python, puedes ejecutar `serve` para ver los resultados localmente en tu navegador web:
 ```
 source venv/bin/activate
 (venv) ~ pip install mkdocs-material
 mkdocs serve 
 ```
 
-Or when everything is done, run build to create the static website:
+O, cuando todo esté listo, ejecuta `build` para crear el sitio web estático:
 ```
 mkdoc build
 ```

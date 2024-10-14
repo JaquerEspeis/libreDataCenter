@@ -35,9 +35,9 @@ theme:
 nav:
   - Home: 'index.md'
   - Pasos:
-    - Lista de materiales: 'docs/pasos/ListaDeMateriales.md'
+    - Lista de materiales: 'pasos/ListaDeMateriales.md'
   - HowTos:
-    - Colaborar: 'docs/howto/ComoColaborar.md'
+    - Colaborar: 'howto/ComoColaborar.md'
 
 markdown_extensions:
   - def_list
