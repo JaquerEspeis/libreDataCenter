@@ -22,7 +22,7 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-      primary: green
+      primary: blue
       accent: indigo
     - scheme: slate
       toggle:
@@ -34,6 +34,8 @@ theme:
 
 nav:
   - Home: 'index.md'
+  - Pasos:
+    - Lista de materiales: 'docs/pasos/ListaDeMateriales.md'
   - HowTos:
     - Colaborar: 'docs/howto/ComoColaborar.md'
 
