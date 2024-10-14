@@ -17,6 +17,9 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: cd mkdocs
-      - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - name: Install requirements
+        working-directory: ./mkdocs
+        run: pip install -r requirements.txt
+      - name: Deploy to pages
+        working-directory: ./mkdocs
+        run: mkdocs gh-deploy --force
