@@ -8,10 +8,10 @@ Desplegado en https://jaquerespeis.github.io/libreDataCenter/
 
 ### Configurar ambiente
 ```
-git clone git@github.com:Carbon-Offset-Open-Platform/mainPublicDoc.git
+git clone git@github.com:JaquerEspeis/libreDataCenter.git
 python3 -m venv venv
 source venv/bin/activate
-(venv) ~ pip install mkdocs-material
+(venv) ~ pip install -r requirements.txt
 ```
 
 ### Añadir contenido
@@ -24,7 +24,7 @@ source venv/bin/activate
 Después de ingresar al entorno de Python, puedes ejecutar `serve` para ver los resultados localmente en tu navegador web:
 ```
 source venv/bin/activate
-(venv) ~ pip install mkdocs-material
+(venv) ~ pip install -r requirements.txt
 mkdocs serve 
 ```
 
